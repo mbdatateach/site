@@ -1,0 +1,465 @@
+* {
+margin: 0;
+padding:0;
+}
+
+.header__title {
+text-transform: uppercase;
+align-self: center;
+text-align: center; 
+color:white;
+position:relative;
+}
+
+    header {
+      width: 100%;
+      height: 10%;
+      background-color: black;
+      display: flex;
+      align-items: center;           /* Вертикальное центрирование элементов */
+      justify-content: center;       /* Горизонтальное центрирование содержимого */
+      position: relative;
+    }
+
+.top-menu { 
+margin-left:1%;
+width: 100%; 
+height: 100%; 
+float: left; 
+position:relative;
+} 
+
+.top-menu ul li { 
+list-style: none; 
+float: left; 
+text-align: center; 
+position:relative;
+} 
+.top-menu ul li a { 
+width: 100%; 
+text-decoration: none; 
+font-family: "Exo2-Medium", sans-serif; 
+font-size: 2em;
+height:100%;
+color: white;
+position:relative;
+} 
+.top-menu ul li a:hover { 
+background: #696969; 
+}
+.top-menu li {
+    margin:1%;
+}
+
+.footer {
+float: left; 
+left: 0; bottom: 0; 
+color: white; 
+background: black; 
+width: 100%; 
+height: 10%; 
+font-family: 'Open Sans', sans-serif;
+font-size: 2em;
+text-align: center; 
+position:relative;
+}
+body {
+background:#303030;
+}
+
+.wrapper {
+width:100%;
+height:100%;
+margin:auto;
+display: block;
+min-width: 800px;
+min-height: 600px;
+position:relative;
+}
+
+main {
+width:78%;
+float:left;
+min-height:100%;
+background:#969696;
+margin:1%;
+position:relative;
+}
+
+aside {
+float:left;
+width:18%;
+min-height:100%;
+background:#969696;
+margin:1%;
+position:relative;
+}
+
+    /* Скрытый чекбокс — управляет состоянием окна */
+    #modal-toggle {
+      display: none;
+    }
+
+    /* Фон затемнения */
+    #zatemnenie {
+      background: rgba(102, 102, 102, 0.5);
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none; /* скрыто по умолчанию */
+      z-index: 1000;
+    }
+
+    /* Всплывающее окно */
+    #okno {
+      width: 400px;
+      height: 165px;
+      padding: 15px;
+      border: 3px solid black;
+      border-radius: 10px;
+      background: black;
+      color: white;
+      font-size: 14pt;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1001;
+      text-align: center;
+    }
+
+    /* Показываем фон и окно, когда чекбокс отмечен */
+    #modal-toggle:checked + #zatemnenie {
+      display: block;
+    }
+
+    /* Кнопка закрытия */
+    .close {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #f2f2f2;
+      color: black;
+      border: 1px solid black;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14pt;
+    }
+
+    .img-container {
+      position: absolute;             /* Выводим из потока flex */
+      right: 20px;                  /* Отступ от правого края */
+      top: 50%;
+      transform: translateY(-50%);    /* Вертикальное центрирование */
+      display: flex;
+      align-items: center;
+    }
+
+    .img-container img {
+      height: 100px;
+      width: auto;
+      cursor: pointer;
+    }
+
+.close:hover {background: #e6e6ff;}
+
+   A {
+    color: #cecece; /* Цвет ссылок */
+   }
+   A:active {
+    color: #ffff00; /* Цвет активных ссылок */
+   }
+P{
+align:justify;
+color:#FFFAFA;
+font-size:16pt;
+}
+H3{
+align:justify;
+font-size:16pt;
+}
+.grid * {
+    box-sizing: border-box;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 20px 0;
+}
+/* Кол-во блоков на разных экранах */
+@media only screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+.grid-item {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    transition: box-shadow .3s;
+    width: 100%;
+    height: 80%;  
+}
+.grid-item .image {
+    height: 200px;
+    overflow: hidden;
+}
+.grid-item .info {
+    position: relative;
+    height: calc(100% - 200px);
+    padding: 16px 14px 80px 14px;
+}
+.grid-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+}
+.grid-item .image img  {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+.info h2 {
+    font-family: 'Roboto', Тahoma, sans-serif;
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+}
+.info-text p {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: Verdana, sans-serif; 
+    margin-bottom: 10px;
+align:justify
+}
+.info-text p:last-child {
+    margin-bottom: 0;
+}
+.grid-item .button-wrap {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 44px;
+    left: 0;
+    text-align: center;
+}
+/* Кнопка подробнее */
+.atuin-btn {
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase; 
+    font-family: 'Roboto', Тahoma, sans-serif;
+    background: black;
+    cursor: pointer; 
+    border: 2px solid #BFE2FF;
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    color: #FFF;
+}
+.atuin-btn:after,
+.atuin-btn:before {
+    position: absolute;
+    height: 4px;
+    left: 50%;
+    background: gray;
+    bottom: -6px;
+    content: "";
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+.atuin-btn:before {
+    top: -6px;
+}
+.atuin-btn:hover:after,
+.atuin-btn:hover:before,
+.atuin-btn:active:after,
+.atuin-btn:active:before,
+.atuin-btn:focus:after,
+.atuin-btn:focus:before {
+    width: 100%;
+    left: 0;
+}
+
+.scroll-table-body {
+	height: 500px;
+	overflow-x: auto;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+.scroll-table table {
+	width:100%;
+	table-layout: fixed;
+	border: none;
+}
+.scroll-table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #404040;
+	font-size: 14px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.scroll-table tbody td {
+	text-align: left;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.scroll-table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+ 
+/* Стили для скролла */
+::-webkit-scrollbar {
+	width: 6px;
+} 
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+text-align: left;
+border-collapse: collapse;
+border-radius: 20px;
+box-shadow: 0 0 0 10px #696969;
+color: #452F21;
+}
+table th {
+padding: 10px 8px;
+background: white;
+}
+table th:first-child {
+border-top-left-radius: 20px;
+}
+table th:last-child {
+border-top-right-radius: 20px;
+}
+table td {
+border-top: 10px solid #696969;
+padding: 8px;
+background: white;
+}
+table td:first-child {
+border-bottom-left-radius: 20px;
+}
+table td:last-child {
+border-bottom-right-radius: 20px;
+}
+
+overflow: scroll; /* Scrollbar are always visible */
+overflow: auto;   /* Scrollbar is displayed as it's needed */
+
+
+.header-h1 {
+    position: relative;
+    margin-bottom: .5rem;
+  }
+  .header-h1 h1 {
+    font-size: 1.5rem;
+    color: #c62828;
+    display: inline-block;
+    background: #A9A9A9;
+    margin-bottom: 0;
+    padding-right: 1rem;
+    text-transform: uppercase;
+  }
+  .header-h1-center {
+    text-align: center;
+  }
+  .header-h1-center h1 {
+    padding-left: 1rem;
+  }
+
+td img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+   td a {
+    display: block; /* Блочная ссылка */
+    background: #fff; /* Красный цвет фона */
+    color: #000; /* Цвет ссылок */
+    padding: 5px; /* Поля вокруг текста */
+   }
+
+.contmeleft {
+border-radius:8px; /* скругляем края блока*/
+width: 100%; /* общая ширина блока*/
+overflow: hidden; /* скрывает возможность появления прокрутки блока. */
+}
+
+.contmeleft img {
+width: 40%; /* ширина картинки 140 */
+height: 80%; /* высота картинки, от неё будет зависеть и размер общего блока */
+object-fit: cover; /* обрезаем края картинки, если они не вместятся в блок */
+object-position: 0 70; /* тоже обрезка краев */
+margin-right: 10px;
+float: left; /* важный момент. с помощью этого знаения, мы показывем браузеру, что блок должен соприкасаться со вторым блоком приемущественно с левой стороны */
+}
+
+.contmeleft p{
+overflow-wrap: normal; /* показывает тексту, что он не должен заходить за границы блока */
+word-wrap: normal;
+word-break: normal; /* не поддерживает Opera12.14, значение keep-all не поддерживается IE, Chrome */
+line-break: auto; /* нет поддержки для русского языка */
+-webkit-hyphens: none; -ms-hyphens: none; hyphens: none; /* значение auto не поддерживается Chrome */
+
+padding: 10px; /* отступ от рамки до текста - делает его красивее */
+margin-left: 15px; /* отступ с левой стороны от блока с картинкой */
+display: block; /* обознначает, что это не просто бесформенный текст, а блок внутри блока */
+font-weight:bold; /* толщина текста - толстый */
+font-size:2em; /* размер текста*/
+margin: 2px 0 0 0; /* отступ от блока с текстом */
+} 
+
+dt {
+align:justify;
+	margin-bottom: 5px;
+	color: #black;
+}
+dd {
+align:justify;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	overflow: hidden;
+	color: #black;
+}
+
+	.primer1{ 
+	color: black;
+	}
