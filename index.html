@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <div class="wrapper">
 
   <header>
@@ -18,6 +19,40 @@
     </div>
   </header>
 
+<div class="subheader-ad">
+  <div class="ad-banner">
+    <div class="ad-icon">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2C8.28 2 2 8.28 2 16C2 23.72 8.28 30 16 30C23.72 30 30 23.72 30 16C30 8.28 23.72 2 16 2ZM16 26C10.48 26 6 21.52 6 16C6 10.48 10.48 6 16 6C21.52 6 26 10.48 26 16C26 21.52 21.52 26 16 26Z" fill="#4a76a8"/>
+        <circle cx="16" cy="16" r="8" fill="#4a76a8"/>
+      </svg>
+    </div>
+    <div class="ad-text">
+      <h3>Расписание РАНХиГС в ВК‑боте</h3>
+      <p>Получайте актуальное расписание вашего потока прямо в сообщениях — без поиска по сайту</p>
+    </div>
+    <div class="ad-actions">
+      <button class="ad-btn secondary" id="show-qr-btn">Подробнее</button>
+      <button class="close-ad">&times;</button>
+    </div>
+  </div>
+</div>
+
+<!-- Всплывающее окно с QR‑кодом -->
+<div id="qr-modal" class="qr-modal">
+  <div class="qr-modal-content">
+    <span class="qr-close">&times;</span>
+    <h2>Присоединяйтесь к группе ВК и пишите боту в сообщения</h2>
+    <p>Отсканируйте QR‑код с телефона или скопируйте ссылку:</p>
+    <div class="qr-container">
+      <img src="qrcod.png" alt="QR-код для подключения бота" id="qr-image">
+    </div>
+    <div class="link-section">
+      <input type="text" id="bot-link" value="https://vk.com/ranepa_orel_schedule" readonly>
+      <button id="copy-btn" class="copy-btn">Копировать ссылку</button>
+    </div>
+  </div>
+</div>
 
 <main>
 <section class="grid">
@@ -145,7 +180,9 @@
 </section>
 </main>
 
+
 <aside>
+
 <dt><font size="5">10.12.2023</font></dt>
 <dd>
 <font size="6"><a href="https://mbprogram.netlify.app/#" style="color:#DCDCD0">Сайт MBProgram</a></font>
@@ -174,6 +211,59 @@
 <div class="footer">
 &copy; MBDataTeach <br>2023-2026
 </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Элементы основного баннера
+  const closeAdBtn = document.querySelector('.close-ad');
+  const adBanner = document.querySelector('.ad-banner');
+
+  // Элементы модального окна с QR‑кодом
+  const showQrBtn = document.getElementById('show-qr-btn');
+  const qrModal = document.getElementById('qr-modal');
+  const qrCloseBtn = document.querySelector('.qr-close');
+  const copyBtn = document.getElementById('copy-btn');
+  const botLink = document.getElementById('bot-link');
+
+  // Закрытие основного баннера
+  closeAdBtn.addEventListener('click', function() {
+    adBanner.style.display = 'none';
+  });
+
+  // Открытие модального окна с QR‑кодом
+  showQrBtn.addEventListener('click', function() {
+    qrModal.style.display = 'flex';
+  });
+
+  // Закрытие модального окна
+  qrCloseBtn.addEventListener('click', function() {
+    qrModal.style.display = 'none';
+  });
+
+  // Закрытие модального окна при клике вне его содержимого
+  qrModal.addEventListener('click', function(e) {
+    if (e.target === qrModal) {
+      qrModal.style.display = 'none';
+    }
+  });
+
+  // Копирование ссылки из модального окна
+  copyBtn.addEventListener('click', function() {
+    botLink.select();
+    document.execCommand('copy');
+
+    // Визуальная обратная связь
+    copyBtn.textContent = 'Скопировано!';
+    copyBtn.classList.add('copied');
+
+    setTimeout(function() {
+      copyBtn.textContent = 'Копировать ссылку';
+      copyBtn.classList.remove('copied');
+    }, 2000);
+  });
+});
+</script>
 </body>
 
 

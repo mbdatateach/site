@@ -3,6 +3,286 @@ margin: 0;
 padding:0;
 }
 
+
+/* Контейнер рекламного блока */
+.subheader-ad {
+  margin: 25px 0;
+  padding: 0 20px;
+}
+
+/* Основной баннер — увеличенный */
+.ad-banner {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+  border: 1px solid #d0e0ff;
+  border-radius: 16px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Увеличенная иконка */
+.ad-icon {
+  flex-shrink: 0;
+}
+
+.ad-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Текст объявления */
+.ad-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-text h3 {
+  margin: 0 0 6px 0;
+  color: #2c3e50;
+  font-size: 1.4em;
+  line-height: 1.3;
+}
+
+.ad-text p {
+  margin: 0;
+  color: #555;
+  font-size: 1.2em; /* увеличенный размер шрифта */
+  line-height: 1.5;
+}
+
+/* Кнопки действий */
+.ad-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Кнопка подключения */
+.ad-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+}
+
+.ad-btn.primary {
+  background: #4a76a8;
+  color: white !important;
+}
+
+.ad-btn.primary:hover {
+  background: #3a5f85;
+}
+
+
+/* Увеличенная кнопка "Подробнее" */
+.ad-btn.secondary {
+  background: #4a76a8;
+  color: white !important;
+  border: none;
+  padding: 14px 28px; /* увеличенные отступы */
+  font-size: 1.1em; /* немного увеличенный шрифт */
+  font-weight: bold;
+  min-width: 200px; /* фиксированная минимальная ширина */
+  box-shadow: 0 4px 8px rgba(74, 118, 168, 0.2); /* лёгкая тень */
+}
+
+.ad-btn.secondary:hover {
+  background: #3a5f85;
+  transform: translateY(-2px); /* небольшой подъём при наведении */
+  box-shadow: 0 6px 12px rgba(74, 118, 168, 0.3); /* более выраженная тень */
+}
+
+.ad-btn.secondary:hover {
+  background: #f0f5fa;
+  color: #3a5f85 !important;
+  border-color: #3a5f85;
+}
+
+/* Кнопка закрытия */
+.close-ad {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+}
+
+.close-ad:hover {
+  color: #333;
+}
+
+/* Всплывающее окно с QR?кодом */
+.qr-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  width: calc(100vw - 40px);
+  text-align: center;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.qr-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #777;
+}
+
+.qr-close:hover {
+  color: #333;
+}
+
+.qr-modal h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+
+.qr-modal p {
+  margin: 0 0 8px 0; /* уменьшаем нижний отступ до 8 px или 0 */
+  color: #777;
+}
+
+.qr-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#qr-image {
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 12px;
+}
+
+.link-section {
+  margin: 20px 0;
+}
+
+#bot-link {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+css
+/* Кнопка копирования в модальном окне */
+.copy-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4a76a8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #3a5f85;
+}
+
+.copy-btn.copied {
+  background: #2ecc71;
+}
+
+/* Анимация появления основного баннера */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анимация появления модального окна */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Адаптивность: для экранов меньше 768 px */
+@media (max-width: 768px) {
+  .ad-banner {
+    padding: 20px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .ad-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ad-btn {
+    min-width: 140px;
+    width: auto;
+  }
+
+  .qr-modal-content {
+    max-width: 360px;
+    padding: 25px;
+  }
+
+  #qr-image {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  .subheader-ad {
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+}
+/*------------------------------------------------*/
+
+
+
 .header__title {
 text-transform: uppercase;
 align-self: center;
