@@ -18,6 +18,20 @@
   </header>
 <main>
 
+<div class="attention-banner">
+  <div class="banner-icon">📢</div>
+  <div class="banner-content">
+    <h3 class="banner-title">Важное обращение!</h3>
+    <p class="banner-text"><b>Поделитесь своим опытом работы с операционными системами! Пройдите короткий анонимный опрос. Результаты пойдут на научные цели. Спасибо за участие!</b></p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjEDlf8wQ6fh8J_xsGvdxxLKNuiLksQnwX9dSgtgmp68ri8A/viewform" class="banner-btn" target="_blank">Пройти опрос сейчас</a>
+  </div>
+  <div class="qr-section">
+    <div class="qr-label">Или отсканируйте QR‑код:</div>
+    <img src="qrcod_sob.png" alt="QR-код для опроса" class="qr-image" width="120" height="120">
+  </div>
+  <button class="banner-close" aria-label="Закрыть баннер">×</button>
+</div>
+
 <div class="header-h1 header-h1-center">
   <h1>2 ИСОСП - ОБЪЕКТНО-ОРИЕНТИРОВАННЫЙ АНАЛИЗ И ПРОГРАММИРОВАНИЕ</h1>
 </div>
@@ -138,6 +152,15 @@
 <div class="footer">
 &copy; MBDataTeach <br>2023-2025
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const banner = document.querySelector('.attention-banner');
+  const closeBtn = document.querySelector('.banner-close');
+  closeBtn.addEventListener('click', function() {
+    banner.style.display = 'none';
+  });
+});
+</script>
 </body>
 
 </html>
