@@ -17,6 +17,22 @@
     </div>
   </header>
 
+
+<div class="attention-banner" id="attentionBanner">
+  <div class="banner-icon">📢</div>
+  <div class="banner-content">
+    <h3 class="banner-title">Важное обращение!</h3>
+    <p class="banner-text"><b>Поделитесь своим опытом работы с операционными системами! Пройдите короткий анонимный опрос. Результаты пойдут на научные цели. Спасибо за участие!</b></p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjEDlf8wQ6fh8J_xsGvdxxLKNuiLksQnwX9dSgtgmp68ri8A/viewform" class="banner-btn" target="_blank">Пройти опрос сейчас</a>
+  </div>
+  <div class="qr-section">
+    <div class="qr-label">Или отсканируйте QR‑код:</div>
+    <img src="qrcod_sob.png" alt="QR-код для опроса" class="qr-image" width="120" height="120">
+  </div>
+  <button class="banner-close" aria-label="Закрыть баннер">×</button>
+</div>
+
+
 <main>
 
 <div class="header-h1 header-h1-center">
@@ -27,9 +43,10 @@
   <h1 style="color: #900020;">ЛЕКЦИИ</h1>
 </div>
 <div class="scroll-table">
-<div class="scroll-table-body" style="height: 100px">
+<div class="scroll-table-body" style="height: 200px">
 <table>
 <tr><td><a href="АИС/лекции/АИС Лекция 1.pptx" >№1 Роль администрирования в жизненном цикле ИС</a></td></tr>
+<tr><td><a href="АИС/лекции/АИС Лекция 2.pptx" >№2 Операционные среды для администратора: DOS и Windows</a></td></tr>
 </table>
 </div>
 </div>
@@ -72,6 +89,19 @@
 <div class="footer">
 &copy; MBDataTeach <br>2023-2026
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('attentionBanner');
+  const closeBtn = banner ? banner.querySelector('.banner-close') : null;
+
+  if (closeBtn && banner) {
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+    });
+  }
+});
+</script>
 </body>
 
 </html>
