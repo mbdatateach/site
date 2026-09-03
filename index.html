@@ -228,6 +228,145 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<!-- Всплывающее окно -->
+    <div class="promo-overlay" id="promoOverlay">
+      <div class="promo-card">
+        <button class="promo-close" id="closePromo" aria-label="Закрыть">&times;</button>
+
+        <div class="promo-banner">
+          <h2>Научный код 2026/2027</h2>
+          <p>Программа для молодых исследователей РАНХиГС</p>
+        </div>
+
+        <div class="promo-content">
+          <span class="promo-deadline"> Регистрация до 23 сентября</span>
+
+          <p>Программа развивает научно-исследовательские компетенции у студентов и навыки научного наставничества у преподавателей. Состоит из <strong>образовательного</strong> и <strong>исследовательского</strong> треков.</p>
+
+          <p class="promo-section-title">Кто может участвовать</p>
+          <p style="margin-top:0">Студенты бакалавриата, специалитета и магистратуры РАНХиГС и других российских вузов</p>
+
+          <p class="promo-section-title">Что вы получите</p>
+          <ul class="promo-list">
+            <li>Лекторий с ведущими экспертами и учёными-практиками</li>
+            <li>Персонального научного руководителя-наставника</li>
+            <li>Публикацию научной статьи в сборнике, индексируемом в РИНЦ</li>
+            <li>Презентацию результатов на Общеакадемическом научном студенческом форуме</li>
+            <li>Попадание в базу «Научный студенческий резерв» (финалисты с 5-го места и выше)</li>
+          </ul>
+
+          <p class="promo-section-title">Баллы при поступлении</p>
+          <div class="promo-points">
+            <table>
+              <tr>
+                <th>Уровень</th>
+                <th>Статус</th>
+                <th>Баллы</th>
+              </tr>
+              <tr>
+                <td>Магистратура (бакалавры)</td>
+                <td>Победитель</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>Магистратура (бакалавры)</td>
+                <td>Призёр</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Магистратура (бакалавры)</td>
+                <td>Финалист</td>
+                <td>15</td>
+              </tr>
+            </table>
+          </div>
+
+          <p class="promo-section-title">Конкурсные направления</p>
+          <div class="promo-directions">
+            <span class="promo-tag">Информационные технологии и телекоммуникации</span>
+            <span class="promo-tag muted">Гос. и муниципальное управление</span>
+            <span class="promo-tag muted">Экономика и управление</span>
+            <span class="promo-tag muted">Право и юриспруденция</span>
+            <span class="promo-tag muted">Социология</span>
+            <span class="promo-tag muted">Психология</span>
+            <span class="promo-tag muted">Политические науки</span>
+            <span class="promo-tag muted">Общегуманитарные науки</span>
+          </div>
+
+          <p class="promo-section-title">Этапы программы</p>
+          <div class="promo-stages">
+            <ol>
+              <li>Регистрация участников (до 23 сентября)</li>
+              <li>Образовательный трек — лекторий и ДПО по методологии исследования</li>
+              <li>Разработка концепции научного исследования и подача заявки на Конкурс</li>
+              <li>Онлайн-экспертиза концепций, формирование «научных пар» с наставниками</li>
+              <li>Исследовательский трек — проведение исследования, написание научной статьи</li>
+              <li>Онлайн-экспертиза статей, презентация на Общеакадемическом форуме</li>
+              <li>Доработка и техническая экспертиза — публикация в сборнике (РИНЦ)</li>
+            </ol>
+          </div>
+
+          <p style="font-size:13px;color:#666;margin-bottom:18px">Концепция исследования включает: актуальность, научную проблему, объект и предмет, цель и задачи, гипотезу, логический анализ ключевых понятий, научную новизну, практическую значимость, методы и список источников (по ГОСТ Р 7.0.100-2018).</p>
+
+          <div class="promo-cta">
+            <a href="https://forms.yandex.ru/u/6a844a12e010db22238fa432/" class="promo-btn" target="_blank" rel="noopener noreferrer">Принять участие -></a>
+          </div>
+
+          <p class="promo-footer">
+            <a href="https://vk.com/kod_nauka" target="_blank" rel="noopener noreferrer">VK</a> · Приказ № 02-01620/001 от 18.08.2026<br>
+	   <a href="https://www.ranepa.ru/cientific-code/" target="_blank" rel="noopener noreferrer">Информация о программе на сайте</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Плавающая кнопка для повторного открытия -->
+    <button class="promo-fab" id="promoFab">Научный код 2026/2027</button>
+
+    <script>
+      (function () {
+        var overlay = document.getElementById('promoOverlay');
+        var closeBtn = document.getElementById('closePromo');
+        var fab = document.getElementById('promoFab');
+
+        // Показать окно через 1.5 сек после загрузки
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            overlay.classList.add('active');
+          }, 1500);
+        });
+
+        // Закрыть по крестику
+        closeBtn.addEventListener('click', function () {
+          overlay.classList.remove('active');
+          fab.classList.add('visible');
+        });
+
+        // Закрыть по клику на затемнённый фон
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('active');
+            fab.classList.add('visible');
+          }
+        });
+
+        // Повторно открыть по плавающей кнопке
+        fab.addEventListener('click', function () {
+          overlay.classList.add('active');
+          fab.classList.remove('visible');
+        });
+
+        // Закрыть по Esc
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            overlay.classList.remove('active');
+            fab.classList.add('visible');
+          }
+        });
+      })();
+    </script>
+
 </body>
 
 </html>
