@@ -7,55 +7,7 @@
 </head>
 
 <body>
-<!-- /////////////////////////////////////////////////////////////////////////////// -->
-    <!-- Затемнённый фон + всплывающее окно -->
-    <div class="modal-overlay" id="modalOverlay">
-      <div class="modal-window">
-        <button class="close-btn" id="closeBtn" aria-label="Закрыть">x</button>
 
-        <h2 class="modal-title">ИТ-диктант 2026</h2>
-
-        <div class="dates-block">
-          <p class="dates-label">Даты проведения</p>
-          <p class="dates-value">11 — 13 сентября</p>
-        </div>
-
-        <div class="timer-block">
-          <p class="timer-label">До начала осталось:</p>
-          <div class="timer-cells" id="timerCells">
-            <div class="timer-cell">
-              <span class="timer-num" id="days">0</span>
-              <span class="timer-unit">дней</span>
-            </div>
-            <div class="timer-cell">
-              <span class="timer-num" id="hours">0</span>
-              <span class="timer-unit">часов</span>
-            </div>
-            <div class="timer-cell">
-              <span class="timer-num" id="minutes">0</span>
-              <span class="timer-unit">минут</span>
-            </div>
-            <div class="timer-cell">
-              <span class="timer-num" id="seconds">0</span>
-              <span class="timer-unit">секунд</span>
-            </div>
-          </div>
-        </div>
-
-        <ul class="benefits">
-          <li>Для всех специалистов — независимо от сферы деятельности</li>
-          <li>Быстрый тест — всего 20–30 минут, бесплатно и онлайн</li>
-          <li>Именной сертификат — готовый плюс к портфолио и резюме</li>
-          <li>Актуальные темы: цифровая безопасность, работа с данными, цифровые сервисы</li>
-        </ul>
-
-        <a href="https://ит-диктант.рф/" class="cta-btn" target="_blank" rel="noopener noreferrer">
-          Пройти ИТ-диктант
-        </a>
-
-      </div>
-    </div>
-<!-- /////////////////////////////////////////////////////////////////////////////// -->
 <div class="wrapper">
   <header>
     <h1 class="header__title">MBDataTeach</h1>
@@ -82,6 +34,7 @@
 <tr><td><a href="АИС/лекции/АИС Лекция 2.pptx" >№2 Операционные среды для администратора: DOS и Windows</a></td></tr>
 <tr><td><a href="АИС/лекции/АИС Лекция 3.pptx" >№3 Операционные среды для администратора: Linux (на VM)</a></td></tr>
 <tr><td><a href="АИС/лекции/АИС Лекция 4.pptx" >№4 Управление пакетами и зависимостями: воспроизводимость окружения</a></td></tr>
+<tr><td><a href="АИС/лекции/АИС Лекция 5.pptx" >№5 IP-адресация, подсети, диагностика сети в локальной среде</a></td></tr>
 </table>
 </div>
 </div>
@@ -141,61 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script>
-      // Показать окно при загрузке
-      window.addEventListener('load', function() {
-        document.getElementById('modalOverlay').classList.add('active');
-      });
-
-      // Закрытие по кнопке
-      document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('modalOverlay').classList.remove('active');
-      });
-
-      // Закрытие по клику на затемнённый фон
-      document.getElementById('modalOverlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-          this.classList.remove('active');
-        }
-      });
-
-      // Закрытие по Escape
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          document.getElementById('modalOverlay').classList.remove('active');
-        }
-      });
-
-      // Таймер обратного отсчёта до 11 сентября 2026
-      var targetDate = new Date('2026-09-11T00:00:00+03:00').getTime();
-
-      function updateTimer() {
-        var now = Date.now();
-        var diff = targetDate - now;
-
-        if (diff <= 0) {
-          document.getElementById('days').textContent = '0';
-          document.getElementById('hours').textContent = '0';
-          document.getElementById('minutes').textContent = '0';
-          document.getElementById('seconds').textContent = '0';
-          document.querySelector('.timer-label').textContent = 'Диктант уже идёт!';
-          return;
-        }
-
-        var d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        var h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        var m = Math.floor((diff / (1000 * 60)) % 60);
-        var s = Math.floor((diff / 1000) % 60);
-
-        document.getElementById('days').textContent = d;
-        document.getElementById('hours').textContent = h;
-        document.getElementById('minutes').textContent = m;
-        document.getElementById('seconds').textContent = s;
-      }
-
-      updateTimer();
-      setInterval(updateTimer, 1000);
-    </script>
 </body>
 
 </html>
