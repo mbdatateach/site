@@ -26,7 +26,7 @@
       </svg>
     </div>
     <div class="ad-text">
-      <h3>Расписание РАНХиГС в ВК‑боте</h3>
+      <h2>Расписание РАНХиГС в ВК‑боте</h2>
       <p>Получайте актуальное расписание вашего потока прямо в сообщениях — без поиска по сайту</p>
     </div>
     <div class="ad-actions">
@@ -264,6 +264,128 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- Кнопка вызова -->
+<button id="olympicBtn" class="olympic-btn">🎓 ИТ-Соревнования для студентов</button>
+
+<div id="olympicModal" class="olympic-modal">
+  <div class="olympic-modal-content">
+    <!-- Кнопка закрытия -->
+    <span class="olympic-close">&times;</span>
+    
+    <h2>Где получить опыт и призы</h2>
+    <p>Группы соревнований для студентов ИТ-направлений.</p>
+
+    <!-- Блок 1: Кейсы и безопасность -->
+    <section>
+      <h3>Кейсы от бизнеса и кибербезопасность</h3>
+      
+      <article class="olympic-event">
+        <h4><strong>Код города (МГТС)</strong></h4>
+        <p>Разработка решений для телекома: робототехника, HR-аналитика, компьютерное зрение.</p>
+        <p><em>Регистрация до:</em> 15 ноября 2026</p>
+        <a href="https://studchamp.mgts.ru" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Кибербезопасность в финансах</strong></h4>
+        <p>CTF-соревнования под эгидой Банка России. Защита цифровой инфраструктуры на полигоне.</p>
+        <p><em>Регистрация до:</em> 3 декабря 2026</p>
+        <a href="https://student.uralcyberfin.ru/?utm_source=freeitevent&utm_medium=max&utm_campaign=registration_2027&utm_content=announcement" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Clean Code Cup</strong></h4>
+        <p>Решение задач машинного обучения для реального заказчика.</p>
+        <p><em>Проведение:</em> март-апрель 2027</p>
+        <a href="https://cleancodecup.ru" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+    </section>
+
+    <!-- Блок 2: Алгоритмика и разработка -->
+    <section>
+      <h3>Алгоритмика и программирование</h3>
+      
+      <article class="olympic-event">
+        <h4><strong>LUXCODE</strong></h4>
+        <p>Онлайн-соревнование по алгоритмике с призовым фондом из внутренней валюты платформы.</p>
+        <p><em>Регистрация до:</em> 1 декабря 2026</p>
+        <a href="https://luxcod.ru/olympiad" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Олимпиада по 1С</strong></h4>
+        <p>Программирование бизнес-приложений на платформе «Предприятие». Сертификация за участие.</p>
+        <p><em>Регистрация до:</em> 21 декабря 2026</p>
+        <a href="https://student.1c.ru/?page=olimpiada-po-programmirovaniyu-1s-rules" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Petropolitan Science</strong></h4>
+        <p>Научная олимпиада СПбГУ. Победители получают гранты Минобрнауки при поступлении в магистратуру.</p>
+        <p><em>Отборочный этап:</em> до 10 февраля 2027</p>
+        <a href="https://psrs-olymp.spbu.ru/" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+    </section>
+
+    <!-- Блок 3: VR, игры и быстрые форматы -->
+    <section>
+      <h3>VR, игры и креативные форматы</h3>
+      <article class="olympic-event">
+        <h4><strong>Классический Game Jam</strong></h4>
+        <p>Создайте игру за 4 дня! Регистрация открыта круглый год, ближайший сезон — декабрь 2026.</p>
+        <p><em>Регистрация до:</em> 18 декабря 2026</p>
+        <a href="https://www.xn--80aa3anexr8c.xn--p1acf/tpost/syxuzglag1-game-jam?ysclid=mw6vo70xoq777867347" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Varwin Hackathon</strong></h4>
+        <p>Создание виртуальных приложений для реальных заказчиков на отечественной платформе Varwin Education.</p>
+        <p><em>Регистрация до:</em> 20 февраля 2027</p>
+        <a href="https://hackathons.varwin.com/varwin-hackathon#programm" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+      <article class="olympic-event">
+        <h4><strong>Game Jam VK & Учи.ру</strong></h4>
+        <p>Разработка образовательных веб-игр для детей. Лучшие прототипы тестируются на платформе Учи.ру.</p>
+        <p><em>Регистрация до:</em> 30 апреля 2027</p>
+        <a href="https://education.vk.company/game-jam/" target="_blank" class="olympic-link">На сайт ➡️</a>
+      </article>
+
+    </section>
+  </div>
+</div>
+
+<script>
+    // Получаем элементы
+    var modal = document.getElementById("olympicModal");
+    var btn = document.getElementById("olympicBtn");
+    var span = document.getElementsByClassName("olympic-close")[0];
+
+    // Когда пользователь нажимает на кнопку, открываем окно
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Когда пользователь нажимает на (x), закрываем окно
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Когда пользователь кликает в любое место ВНЕ окна, закрываем его
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Закрытие по нажатию клавиши Escape
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.key === "Escape") {
+            modal.style.display = "none";
+        }
+    };
+</script>
 </body>
 
 </html>
