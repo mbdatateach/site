@@ -180,7 +180,30 @@
     <font size="6"><a href="https://disk.360.yandex.ru/d/vdGXZmF8ELFnFQ" style="color:#DCDCD0">Диск с материалами</a></font>
     <p align="justify"><font size="5">Все работы для групп теперь также размещены на диске (в случае ограниченной доступности основного сайта).</font></p>
   </dd>
+  <dd>
+<!-- Кнопка -->
+<button id="downloadsBtn" class="downloads-btn">📥 ИСАЕВ C#</button>
 
+<!-- Модальное окно -->
+<div id="downloadsModal" class="downloads-modal">
+  <div class="downloads-modal-content">
+    <span class="downloads-close">&times;</span>
+    <div class="downloads-list">
+      <!-- Файл 1 -->
+      <div class="downloads-item">
+        <strong>тестовый модуль (задание 2 в билете)</strong>
+        <a href="тестовый драйвер.zip" download class="downloads-link">Скачать</a>
+      </div>
+
+      <!-- Файл 2 -->
+      <div class="downloads-item">
+        <strong>Теоретический материал</strong>
+        <a href="тестовый драйвер.pptx" download class="downloads-link">Скачать</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </dd>
 </aside>
 
 
@@ -385,7 +408,39 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = "none";
         }
     };
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('downloadsModal');
+  const btn = document.getElementById('downloadsBtn');
+  const closeSpan = document.querySelector('.downloads-close');
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+  }
+
+  if (closeSpan) {
+    closeSpan.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      modal.style.display = 'none';
+    }
+  });
+});
 </script>
+
 </body>
 
 </html>
