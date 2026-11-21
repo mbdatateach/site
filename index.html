@@ -169,20 +169,23 @@
 
 
 <aside>
+
+<!-- ===== Постер афиши в сайдбаре ===== -->
+<article class="afisha-poster">
+  <div class="afisha-poster-head">Открываем регистрацию на турнир по CS2!</div>
+  <img src="афиша.png" id="afishaPosterImg"
+       alt="Афиша: Киберлига РАНХиГС — открытый кибертурнир по Counter-Strike 2, 18+">
+  <a href="https://vk.ru/cyber_57" target="_blank" class="afisha-poster-btn">
+    ПОДАВАЙ ЗАЯВКУ <br>vk.com/cyber_57
+  </a>
+
+<!--
   <dt><font size="5">10.12.2023</font></dt>
   <dd>
     <font size="6"><a href="https://mbprogram.netlify.app/#" style="color:#DCDCD0">Сайт MBProgram</a></font>
     <p align="justify"><font size="5">Открыт доступ на основной сайт разработчика. Дополнительные контакты для связи расположены там.</font></p>
   </dd>
-
-  <dt><font size="5">27.10.2025</font></dt>
-  <dd>
-    <font size="6"><a href="https://disk.360.yandex.ru/d/vdGXZmF8ELFnFQ" style="color:#DCDCD0">Диск с материалами</a></font>
-    <p align="justify"><font size="5">Все работы для групп теперь также размещены на диске (в случае ограниченной доступности основного сайта).</font></p>
-  </dd>
-  <dd>
-<!-- Кнопка -->
-<button id="downloadsBtn" class="downloads-btn">📥 ИСАЕВ C#</button>
+-->
 </aside>
 
 
@@ -387,6 +390,21 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = "none";
         }
     };
+</script>
+<script>
+(function () {
+  var img = document.getElementById('afishaPosterImg');
+  var lb = document.createElement('div');
+  lb.id = 'afishaLightbox';
+  lb.innerHTML = '<img src="афиша.png" alt="Афиша: Киберлига РАНХиГС">';
+  document.body.appendChild(lb);
+
+  img.addEventListener('click', function () { lb.classList.add('open'); });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') lb.classList.remove('open');
+  });
+})();
 </script>
 
 </body>
